@@ -16,7 +16,7 @@ app.use(routes);
 // The "sync" part means that this is Sequelize taking the models and connecting them to associated database tables. If it doesn't find a table, it'll create it
 // The use of {force: false} in the .sync() method doesn't have to be included, but if it were set to 'true', it would drop and re-create all of the database tables on startup.
 
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => {
     console.log("Now Listening");
   });
