@@ -51,10 +51,19 @@ User.init(
     hooks: {
       // set up beforeCreate lifecycle "hook" functionality
 
-      beforeCreate(userData) {
-        return bcrypt.hash(userData.password, 10).then((newUserData) => {
-          return newUserData;
-        });
+      async beforeCreate(userData) {
+        newUserData.password = await bcrypt.hash(userData.password, 10);
+        return newUserData;
+      },
+
+      // set up beforeUpdate lifecycle "hook" functionality
+
+      async beforeUpdate(updatedUserData) {
+        updatedUserData.password = await bcrypt.hash(
+          updatedUserData.password,
+          10
+        );
+        return updatedUserData;
       },
     },
     // table configuration options go here (https://sequelize.org/v5/manual/models-definition.html#configuration)
