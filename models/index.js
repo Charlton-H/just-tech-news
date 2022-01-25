@@ -16,7 +16,7 @@ Post.belongsTo(User, {
 // define a Many-to-Many juntion
 User.belongsToMany(Post, {
   through: Vote,
-  as: "voted_post",
+  as: "voted_posts",
   foreignKey: "user_id",
 });
 
