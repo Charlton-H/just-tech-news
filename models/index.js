@@ -28,7 +28,7 @@ Post.belongsToMany(User, {
 
 // fk constraint -- create one-to-many associations directly between these models,
 // can perform aggreegated SQL functions between models
-Vote.hasMany(User, {
+Vote.belongsTo(User, {
   foreignKey: "user_id",
 });
 
@@ -40,7 +40,7 @@ User.hasMany(Vote, {
   foreignKey: "user_id",
 });
 
-Post.belongsTo(Vote, {
+Post.hasMany(Vote, {
   foreignKey: "post_id",
 });
 
