@@ -11,7 +11,7 @@ async function loginFormHandler(event) {
         email,
         password,
       }),
-      headers: { "Cotent-Type": "application/json" },
+      headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
@@ -23,7 +23,6 @@ async function loginFormHandler(event) {
 }
 
 async function signupFormHandler(event) {
-  console.log("hi");
   event.preventDefault();
 
   const username = document.querySelector("#username-signup").value.trim();
