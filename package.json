@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server"
+    "dev": "nodemon server",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "sequelize": "^6.13.0"
   },
   "devDependencies": {
+    "jest": "^27.4.7",
     "nodemon": "^2.0.15"
   }
 }
