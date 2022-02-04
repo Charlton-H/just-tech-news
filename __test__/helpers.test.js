@@ -1,4 +1,4 @@
-const { format_date, format_plural } = require('../utils/helpers');
+const { format_date, format_plural, format_url } = require('../utils/helpers');
 
 test('format_date() returns a date string', () => {
   const date = new Date('2022-02-03 16:57:01');
