@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3001;
 
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
+// setuo for use for cookies
 const sess = {
   secret: 'Super secret secret',
   cookie: {},
