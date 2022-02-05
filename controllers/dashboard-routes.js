@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
+const withAuth = require('../utils/auth');
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
   // the dashboard should only display posts created by the logged in user,
   // you can add a where object to the findAll() query that uses the id saved on the session.
   // You'll also need to serialize the Sequelize data before sending it to the template.
