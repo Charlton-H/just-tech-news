@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
 // create our Post model
 class Post extends Model {
@@ -11,15 +11,15 @@ class Post extends Model {
       return Post.findOne({
         where: { id: body.post_id },
         attributes: [
-          "id",
-          "post_url",
-          "title",
-          "created_at",
+          'id',
+          'post_url',
+          'title',
+          'created_at',
           [
             sequelize.literal(
-              "(SELECT COUNT (*) FROM vote WHERE post.id = vote.post_id)"
+              '(SELECT COUNT (*) FROM vote WHERE post.id = vote.post_id)'
             ),
-            "vote_count",
+            'vote_count',
           ],
         ],
       });
@@ -44,14 +44,14 @@ Post.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
-      references: { model: "user", key: "id" },
+      references: { model: 'user', key: 'id' },
     },
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "post",
+    modelName: 'post',
   }
 );
 
