@@ -149,11 +149,7 @@ router.put('/:id', withAuth, (req, res) => {
   )
     .then((dbPostData) => {
       if (!dbPostData) {
-<<<<<<< HEAD:routes/api/post-routes.js
-        res.status(404).json({ message: "No post found with this id" });
-=======
-        res.status(404), json({ message: 'No post found with this id' });
->>>>>>> develop:controllers/api/post-routes.js
+        res.status(404).json({ message: 'No post found with this id' });
         return;
       }
       res.json(dbPostData);
